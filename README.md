@@ -64,11 +64,11 @@ src/
 
 ### Environment variables
 
-| Variable           | Default                           | Purpose                                                                                                                                                                                                     |
-| ------------------ | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `VITE_QUOTE_EMAIL` | `purnimaindustries2022@gmail.com` | Inbox the quote form addresses                                                                                                                                                                              |
-| `VITE_GTAG_ID`     | `AW-18504839090`                  | Google Ads tag; set empty to disable                                                                                                                                                                        |
-| `VITE_SITE_URL`    | _(empty)_                         | Public site address, e.g. `https://purnima-industries.web.app`. Makes the link-preview image an absolute URL so WhatsApp, LinkedIn and Facebook show it. Set it in `.env.production.local` before building. |
+| Variable           | Default                           | Purpose                                                                                                                                                                                                                                      |
+| ------------------ | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `VITE_QUOTE_EMAIL` | `purnimaindustries2022@gmail.com` | Inbox the quote form addresses                                                                                                                                                                                                               |
+| `VITE_GTAG_ID`     | `AW-18504839090`                  | Google Ads tag; set empty to disable                                                                                                                                                                                                         |
+| `VITE_SITE_URL`    | _(empty)_                         | Public site address, e.g. `https://purnima-industries.web.app`. Makes the link-preview image an absolute URL so WhatsApp, LinkedIn and Facebook show it. Set it in `.env.production` (committed) or `.env.production.local` before building. |
 
 Analytics only loads in production builds. A successful quote submission fires a
 `generate_lead` event.
@@ -102,3 +102,16 @@ npm run deploy                # builds, then runs firebase deploy --only hosting
 ```
 
 The `dist/` folder also works on Vercel, Netlify, Cloudflare Pages or any static web server.
+
+### Cloud Run
+
+The `Dockerfile` builds the site and serves `dist/` with nginx on port 8080, so Cloud Run can
+run it directly. Either deploy from Cloud Shell:
+
+```bash
+gcloud run deploy purnima-website --source . --region asia-south1 --allow-unauthenticated
+```
+
+or connect the GitHub repo in the Cloud Run console (**Continuously deploy from a repository**)
+and choose **Dockerfile** as the build type, not Google Cloud's buildpacks. Builds from GitHub
+read `VITE_SITE_URL` from the committed `.env.production`.
