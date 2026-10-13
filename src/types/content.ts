@@ -36,3 +36,18 @@ export interface Phone {
   /** E.164 digits without the leading "+" (used for wa.me and tel: links) */
   e164: string;
 }
+
+export interface WorkItem {
+  /** Matches the image files `src/assets/work/<slug>-600.webp` and `<slug>-1200.webp`. */
+  slug: string;
+  title: string;
+  /** Short spec line, e.g. "Laser cut · Custom OD / ID". */
+  details: string;
+  /** Describes the photo for screen readers and search engines. */
+  alt: string;
+}
+
+export interface WorkImage extends WorkItem {
+  thumb: string;
+  full: string;
+}

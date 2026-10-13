@@ -11,6 +11,7 @@ describe('App', () => {
     for (const title of [
       /built on the shop floor/i,
       /every process your drawing needs/i,
+      /parts off our shop floor/i,
       /machine capability/i,
       /ambernath midc/i,
       /send us your drawing/i,

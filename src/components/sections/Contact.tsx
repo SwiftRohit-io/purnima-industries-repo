@@ -56,7 +56,7 @@ export function Contact() {
   const { primary, secondary } = site.phones;
 
   return (
-    <Section id="contact" alt>
+    <Section id="contact">
       <SectionHeading
         eyebrow="Get In Touch"
         title="Send us your drawing, get a quote"

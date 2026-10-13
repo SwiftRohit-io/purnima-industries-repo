@@ -2,6 +2,7 @@ import type { KeyValue, Machine, MaterialCapacity, NavLink, Service, Spec } from
 
 export const navLinks: NavLink[] = [
   { label: 'Services', href: '#services' },
+  { label: 'Our Work', href: '#work' },
   { label: 'Capability', href: '#capability' },
   { label: 'Location', href: '#location' },
   { label: 'Contact', href: '#contact' },

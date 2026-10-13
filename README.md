@@ -38,13 +38,14 @@ npm run dev        # http://localhost:5173
 
 ```
 src/
-├── assets/              Images (logo, shop floor, press brake, works gate)
+├── assets/              Images (logo, shop floor, press brake, works gate, work/ gallery)
 ├── components/
 │   ├── layout/          Header, Footer, MobileActionBar
-│   ├── sections/        Hero, About, Services, Capability, Location, Contact, QuoteForm
-│   └── ui/              Button, Container, Eyebrow, Section, PhotoFrame, SpecTable
+│   ├── sections/        Hero, About, Services, Work, Capability, Location, Contact, QuoteForm
+│   └── ui/              Button, Container, Eyebrow, Section, PhotoFrame, SpecTable, Lightbox
 ├── config/site.ts       Company details: phones, email, address, map coordinates
 ├── data/content.ts      Page content: services, machines, materials, stats, badges
+├── data/work.ts         Recent work gallery entries
 ├── lib/                 Quote schema + mailto builder, analytics, cn() helper
 ├── styles/index.css     Tailwind entry + design tokens (light/dark)
 ├── types/               Shared content types
@@ -55,6 +56,8 @@ src/
 
 - **Contact details / address / map pin** → `src/config/site.ts`
 - **Services, machines, material capacities, stats, trust badges, form options** → `src/data/content.ts`
+- **Recent work gallery** → `src/data/work.ts`. Add `<slug>-600.webp` and `<slug>-1200.webp` (square)
+  to `src/assets/work/`, then add one entry with that slug, a title, a spec line and alt text.
 - **Colours & fonts** → tokens at the top of `src/styles/index.css`. Dark mode follows the OS
   preference; force a theme with `<html data-theme="light|dark">`.
 

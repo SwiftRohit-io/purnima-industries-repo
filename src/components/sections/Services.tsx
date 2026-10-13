@@ -4,7 +4,7 @@ import { Section, SectionHeading } from '@/components/ui/Section';
 
 function ServiceCard({ service }: { service: Service }) {
   return (
-    <li className="relative border border-line bg-bg px-[22px] py-[26px] transition-[border-color,transform] duration-200 hover:-translate-y-[3px] hover:border-accent">
+    <li className="relative border border-line bg-bg px-[22px] py-[26px] transition-[border-color,transform] duration-200 group-[.alt]/section:bg-surface-2 hover:-translate-y-[3px] hover:border-accent">
       <span
         aria-hidden="true"
         className="absolute -top-px -left-px size-3 border-t-2 border-l-2 border-line-strong"

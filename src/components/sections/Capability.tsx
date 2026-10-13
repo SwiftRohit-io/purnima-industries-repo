@@ -19,7 +19,7 @@ const materialColumns: SpecColumn<MaterialCapacity>[] = [
 
 export function Capability() {
   return (
-    <Section id="capability" alt>
+    <Section id="capability">
       <SectionHeading
         eyebrow="On The Floor"
         title="Machine capability"
@@ -58,7 +58,7 @@ export function Capability() {
         {trustBadges.map((badge) => (
           <li
             key={badge}
-            className="flex items-center gap-2 border border-line bg-surface-2 px-4 py-2.5 font-mono text-[0.86rem] before:inline-block before:size-[7px] before:bg-tick before:content-['']"
+            className="flex items-center gap-2 border border-line bg-bg px-4 py-2.5 font-mono text-[0.86rem] group-[.alt]/section:bg-surface-2 before:inline-block before:size-[7px] before:bg-tick before:content-['']"
           >
             {badge}
           </li>

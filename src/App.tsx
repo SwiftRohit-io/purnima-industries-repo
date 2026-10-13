@@ -7,6 +7,7 @@ import { Contact } from '@/components/sections/Contact';
 import { Hero } from '@/components/sections/Hero';
 import { Location } from '@/components/sections/Location';
 import { Services } from '@/components/sections/Services';
+import { Work } from '@/components/sections/Work';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Hero />
         <About />
         <Services />
+        <Work />
         <Capability />
         <Location />
         <Contact />

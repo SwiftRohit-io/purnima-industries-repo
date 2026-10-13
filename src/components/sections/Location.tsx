@@ -30,7 +30,7 @@ function SitePlan({ children }: { children?: ReactNode }) {
 
 export function Location() {
   return (
-    <Section id="location">
+    <Section id="location" alt>
       <SectionHeading eyebrow="Find Us" title="On the shop floor in Ambernath MIDC" />
       <div className="grid grid-cols-[1fr_1.3fr] items-stretch gap-7 max-[860px]:grid-cols-1">
         <div className="flex flex-col justify-between gap-6 border border-line bg-bg p-7">
