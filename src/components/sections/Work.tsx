@@ -13,7 +13,7 @@ export function Work() {
         title="Parts off our shop floor"
         description="A sample of recent laser cutting and bending jobs. Every part is made to the customer's drawing — tap a photo to see it full size."
       />
-      <ul className="m-0 grid list-none grid-cols-4 gap-5 p-0 max-[1000px]:grid-cols-2 max-[480px]:grid-cols-1">
+      <ul className="m-0 grid list-none grid-cols-3 gap-5 p-0 max-[900px]:grid-cols-2 max-[480px]:grid-cols-1">
         {workGallery.map((item, i) => (
           <li key={item.slug}>
             <button
@@ -25,7 +25,7 @@ export function Work() {
               <img
                 src={item.thumb}
                 srcSet={`${item.thumb} 600w, ${item.full} 1200w`}
-                sizes="(max-width: 480px) 92vw, (max-width: 1000px) 46vw, 280px"
+                sizes="(max-width: 480px) 92vw, (max-width: 900px) 46vw, 380px"
                 alt={item.alt}
                 width={600}
                 height={600}

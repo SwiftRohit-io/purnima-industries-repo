@@ -30,6 +30,12 @@ export const workItems: WorkItem[] = [
     details: 'Laser cut holes · Custom PCD',
     alt: 'Laser cut steel flange plate with six bolt holes on a custom pitch circle diameter',
   },
+  {
+    slug: 'packed-for-dispatch',
+    title: 'Packed & Ready for Dispatch',
+    details: 'Wooden crate packing · Safe delivery',
+    alt: 'Large steel flange rings and wrapped parts packed in a wooden crate, ready for dispatch',
+  },
 ];
 
 const files = import.meta.glob<string>('../assets/work/*.webp', {
