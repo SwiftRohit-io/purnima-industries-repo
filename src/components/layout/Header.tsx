@@ -1,4 +1,4 @@
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo.webp';
 import { navLinks } from '@/data/content';
 import { site, whatsappUrl } from '@/config/site';
 import { ButtonLink } from '@/components/ui/Button';

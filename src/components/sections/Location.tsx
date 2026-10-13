@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import worksGate from '@/assets/works-gate.jpg';
+import worksGate from '@/assets/works-gate-900.webp';
+import worksGateSmall from '@/assets/works-gate-480.webp';
 import { mapsDirectionsUrl, mapsSearchUrl, site } from '@/config/site';
 import { ButtonLink } from '@/components/ui/Button';
 import { Section, SectionHeading } from '@/components/ui/Section';
@@ -50,6 +51,10 @@ export function Location() {
           </div>
           <img
             src={worksGate}
+            srcSet={`${worksGateSmall} 480w, ${worksGate} 900w`}
+            sizes="(max-width: 860px) calc(100vw - 106px), 420px"
+            width={900}
+            height={667}
             alt="Purnima Industries works gate, Plot A-46, Ambernath MIDC"
             loading="lazy"
             decoding="async"
