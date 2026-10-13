@@ -29,6 +29,7 @@ npm run dev        # http://localhost:5173
 | `npm run dev`       | Start the dev server                   |
 | `npm run build`     | Typecheck and build to `dist/`         |
 | `npm run preview`   | Serve the production build locally     |
+| `npm run deploy`    | Build and deploy to Firebase Hosting   |
 | `npm run lint`      | ESLint                                 |
 | `npm run format`    | Prettier (with Tailwind class sorting) |
 | `npm run typecheck` | `tsc -b`                               |
@@ -63,10 +64,11 @@ src/
 
 ### Environment variables
 
-| Variable           | Default                           | Purpose                              |
-| ------------------ | --------------------------------- | ------------------------------------ |
-| `VITE_QUOTE_EMAIL` | `purnimaindustries2022@gmail.com` | Inbox the quote form addresses       |
-| `VITE_GTAG_ID`     | `AW-18504839090`                  | Google Ads tag; set empty to disable |
+| Variable           | Default                           | Purpose                                                                                                                                                                                                     |
+| ------------------ | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `VITE_QUOTE_EMAIL` | `purnimaindustries2022@gmail.com` | Inbox the quote form addresses                                                                                                                                                                              |
+| `VITE_GTAG_ID`     | `AW-18504839090`                  | Google Ads tag; set empty to disable                                                                                                                                                                        |
+| `VITE_SITE_URL`    | _(empty)_                         | Public site address, e.g. `https://purnima-industries.web.app`. Makes the link-preview image an absolute URL so WhatsApp, LinkedIn and Facebook show it. Set it in `.env.production.local` before building. |
 
 Analytics only loads in production builds. A successful quote submission fires a
 `generate_lead` event.
@@ -80,5 +82,23 @@ site instead, replace `onOpenMailto` in `QuoteForm` with a call to a form backen
 
 ## Deployment
 
-`npm run build` outputs a static site in `dist/` that can be hosted on Vercel, Netlify,
-Cloudflare Pages, GitHub Pages or any static web server.
+`npm run build` outputs a static site in `dist/`. It is set up for **Firebase Hosting**
+(Google Cloud): `firebase.json` serves `dist/`, rewrites every path to `index.html`, and caches
+the hashed files in `dist/assets/` for a year.
+
+One-time setup:
+
+```bash
+npm install -g firebase-tools
+firebase login
+firebase use --add            # pick your Firebase project; this writes .firebaserc (commit it)
+echo "VITE_SITE_URL=https://<project-id>.web.app" > .env.production.local
+```
+
+Every deploy after that:
+
+```bash
+npm run deploy                # builds, then runs firebase deploy --only hosting
+```
+
+The `dist/` folder also works on Vercel, Netlify, Cloudflare Pages or any static web server.
