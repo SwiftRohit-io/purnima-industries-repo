@@ -36,6 +36,30 @@ export const workItems: WorkItem[] = [
     details: 'Wooden crate packing · Safe delivery',
     alt: 'Large steel flange rings and wrapped parts packed in a wooden crate, ready for dispatch',
   },
+  {
+    slug: 'multi-hole-flange-ring',
+    title: 'Multi-Hole Flange Ring',
+    details: 'Accurate hole pitch · MS plate',
+    alt: 'Laser cut mild steel flange ring with evenly spaced bolt holes around the rim',
+  },
+  {
+    slug: 'flange-ring',
+    title: 'Flange Ring',
+    details: 'MS · SS · Aluminium on request',
+    alt: 'Laser cut flange ring with a circle of bolt holes, lying on a white surface',
+  },
+  {
+    slug: 'nested-ring-cutting',
+    title: 'Nested Ring Cutting',
+    details: 'Rings cut inside rings · Less scrap',
+    alt: 'Stack of laser cut steel rings of different sizes, cut one inside another to save material',
+  },
+  {
+    slug: 'galvanized-tray',
+    title: 'Galvanized Tray',
+    details: 'GI sheet · CNC press brake bending',
+    alt: 'Galvanized steel tray with bent-up sides, formed on a CNC press brake',
+  },
 ];
 
 const files = import.meta.glob<string>('../assets/work/*.webp', {
