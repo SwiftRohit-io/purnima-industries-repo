@@ -79,9 +79,9 @@ export const machines: Machine[] = [
 ];
 
 export const materialCapacities: MaterialCapacity[] = [
-  { material: 'Mild Steel (MS)', thickness: '0.3 – 25 mm', process: 'Laser Cutting' },
-  { material: 'Stainless Steel (SS)', thickness: '0.3 – 25 mm', process: 'Laser Cutting' },
-  { material: 'Aluminium', thickness: '0.3 – 25 mm', process: 'Laser Cutting' },
+  { material: 'Mild Steel (MS)', thickness: '0.3 – 20 mm', process: 'Laser Cutting' },
+  { material: 'Stainless Steel (SS)', thickness: '0.3 – 20 mm', process: 'Laser Cutting' },
+  { material: 'Aluminium', thickness: '0.3 – 20 mm', process: 'Laser Cutting' },
   { material: 'Brass', thickness: '0.3 – 10 mm', process: 'Laser Cutting' },
   { material: 'Copper', thickness: '0.3 – 5 mm', process: 'Laser Cutting' },
 ];
