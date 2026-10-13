@@ -1,0 +1,6 @@
+# Used by `gcloud run deploy --source .`. Without this file gcloud falls back to .gitignore,
+# which would skip .env.production.local and leave VITE_SITE_URL out of the build.
+.git
+node_modules
+dist
+coverage
