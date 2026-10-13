@@ -1,4 +1,5 @@
-import shopFloor from '@/assets/shop-floor-laser.jpg';
+import shopFloor from '@/assets/shop-floor-laser-1100.webp';
+import shopFloorSmall from '@/assets/shop-floor-laser-640.webp';
 import { aboutStats } from '@/data/content';
 import { site } from '@/config/site';
 import { Eyebrow } from '@/components/ui/Eyebrow';
@@ -39,6 +40,10 @@ export function About() {
         </div>
         <PhotoFrame
           src={shopFloor}
+          srcSet={`${shopFloorSmall} 640w, ${shopFloor} 1100w`}
+          sizes="(max-width: 860px) calc(100vw - 48px), 540px"
+          width={1100}
+          height={816}
           alt="James Laser CNC fiber laser and press brake machine on the Purnima Industries shop floor"
           caption={['James Laser · Fiber Laser', 'Our Shop Floor']}
         />

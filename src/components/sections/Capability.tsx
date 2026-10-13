@@ -1,4 +1,4 @@
-import pressBrake from '@/assets/press-brake.jpg';
+import pressBrake from '@/assets/press-brake.webp';
 import { machines, materialCapacities, trustBadges } from '@/data/content';
 import type { Machine, MaterialCapacity } from '@/types/content';
 import { PhotoFrame } from '@/components/ui/PhotoFrame';
@@ -35,6 +35,8 @@ export function Capability() {
         />
         <PhotoFrame
           src={pressBrake}
+          width={381}
+          height={500}
           alt="EM CNC PBE 2031 press brake on the Purnima Industries shop floor"
           caption={['EM CNC PBE 2031', 'Press Brake']}
         />
